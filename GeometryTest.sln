@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryTest", "GeometryTest\GeometryTest.csproj", "{29CD813E-8455-45BF-A8A9-6A6E20934174}"
+	ProjectSection(ProjectDependencies) = postProject
+		{561975EE-AA27-4AA1-8F5B-3F66A104287E} = {561975EE-AA27-4AA1-8F5B-3F66A104287E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomGeometry", "CustomGeometry\CustomGeometry.csproj", "{561975EE-AA27-4AA1-8F5B-3F66A104287E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29CD813E-8455-45BF-A8A9-6A6E20934174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29CD813E-8455-45BF-A8A9-6A6E20934174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29CD813E-8455-45BF-A8A9-6A6E20934174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29CD813E-8455-45BF-A8A9-6A6E20934174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561975EE-AA27-4AA1-8F5B-3F66A104287E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561975EE-AA27-4AA1-8F5B-3F66A104287E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561975EE-AA27-4AA1-8F5B-3F66A104287E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561975EE-AA27-4AA1-8F5B-3F66A104287E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A51C70A-6493-4511-9A14-A88DA6FF19C7}
+	EndGlobalSection
+EndGlobal
