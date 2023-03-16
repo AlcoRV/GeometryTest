@@ -23,14 +23,40 @@ namespace CustomGeometry
         /// </summary>
         public double C { get; set; }
 
+        private bool isValid()
+        {
+            return (A > 0 && B > 0 && C > 0); 
+        }
+
         public override double CalculateArea()
         {
-            if(A <= 0 || B <= 0 || C <= 0)
+            if(!isValid())
             {
                 return 0;
             }
             var p = (A + B + C) / 2;
             return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+        }
+
+        public bool isRight()
+        {
+            if (!isValid())
+            {
+                return false;
+            }
+
+            if(A * A == B * B + C * C) { 
+                return true; 
+            }
+            if (B * B == A * A + C * C)
+            {
+                return true;
+            }
+            if (C * C == B * B + A * A)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
