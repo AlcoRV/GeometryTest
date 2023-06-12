@@ -1,24 +1,17 @@
 ﻿namespace CustomGeometry
 {
     /// <summary>
-    ///     Вспомогательный класс для геометрических расчётов (Второй вариант решения)
+    ///     Класс для методов расширения 2D-фигур (третий вариант)
     /// </summary>
-    public sealed class Geometry2DHelper
+    public static class Geometry2DExtension
     {
-        private readonly Figure2D _figure;
-
-        public Geometry2DHelper(Figure2D figure)
+        public static double CalculateAreaExt(this Figure2D figure)
         {
-            _figure = figure;
-        }
-
-        public double CalculateArea()
-        {
-            if(_figure is Circle circle)
+            if (figure is Circle circle)
             {
                 return CalculateAreaCircle(circle);
             }
-            else if(_figure is Triangle triangle)
+            else if (figure is Triangle triangle)
             {
                 return CalculateAreaTriangle(triangle);
             }
