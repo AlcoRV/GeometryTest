@@ -1,50 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomGeometry
+﻿namespace CustomGeometry
 {
-    public class Triangle : Figure2D
+    public sealed class Triangle : Figure2D
     {
+        private readonly double _a, _b, _c;
+
         /// <summary>
         ///     Сторона A
         /// </summary>
-        public double A { get; set; }
+        public double A { get => _a; }
 
         /// <summary>
         ///     Сторона B
         /// </summary>
-        public double B { get; set; }
+        public double B { get => _b; }
 
         /// <summary>
         ///     Сторона C
         /// </summary>
-        public double C { get; set; }
+        public double C { get => _c; }
 
-        private bool isValid()
+        public Triangle(double a, double b, double c)
         {
-            return (A > 0 && B > 0 && C > 0); 
+            if(a < 0 || b < 0 || c < 0) { throw new ArgumentException("One of arguments is not valid!"); }
+
+            _a = a;
+            _b = b;
+            _c = c;
         }
 
         public override double CalculateArea()
         {
-            if(!isValid())
-            {
-                return 0;
-            }
             var p = (A + B + C) / 2;
             return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
         }
 
-        public bool isRight()
+        public bool IsRight()
         {
-            if (!isValid())
-            {
-                return false;
-            }
-
             if(A * A == B * B + C * C) { 
                 return true; 
             }

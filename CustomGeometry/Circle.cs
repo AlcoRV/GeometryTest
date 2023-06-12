@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CustomGeometry
+﻿namespace CustomGeometry
 {
-    public class Circle : Figure2D
+    public sealed class Circle : Figure2D
     {
-        public double Radius { get; set; }
+        private readonly double _radius;
 
-        public override double CalculateArea()
+        public double Radius
         {
-            if (Radius <= 0)
-            {
-                return 0;
-            }
-            return Math.PI * Radius * Radius;
+            get => _radius; 
         }
+
+        public Circle(double radius)
+        {
+            if(radius < 0) { throw new ArgumentException("Radius is not valid!"); }
+
+            _radius = radius;
+        }
+
+        public override double CalculateArea() => Math.PI * Radius * Radius;
     }
 }
