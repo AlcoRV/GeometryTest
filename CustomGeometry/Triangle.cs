@@ -21,7 +21,7 @@
 
         public Triangle(double a, double b, double c)
         {
-            if(a < 0 || b < 0 || c < 0) { throw new ArgumentException("One of arguments is not valid!"); }
+            if(a <= 0 || b <= 0 || c <= 0) { throw new ArgumentException("One of arguments is not valid!"); }
 
             _a = a;
             _b = b;

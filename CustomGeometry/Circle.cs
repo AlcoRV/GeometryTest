@@ -11,7 +11,7 @@
 
         public Circle(double radius)
         {
-            if(radius < 0) { throw new ArgumentException("Radius is not valid!"); }
+            if(radius <= 0) { throw new ArgumentException("Radius is not valid!"); }
 
             _radius = radius;
         }
