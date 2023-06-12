@@ -1,16 +1,14 @@
 ﻿using CustomGeometry;
 
-var circle = new Circle();
-circle.Radius = 5;
+var circle1 = new Circle(5);
+var circle2 = new Circle(7);
 
-Console.WriteLine(circle.CalculateArea());
+Console.WriteLine(circle1.CalculateArea());
+Console.WriteLine(circle2.CalculateAreaExt());
 
-var triangle = new Triangle();
-triangle.A = 3;
-triangle.B = 4;
-triangle.C = 5;
+var triangle = new Triangle(3, 4, 5);
 
-var helper = new Geometry2DHelper();
+var helper = new Geometry2DHelper(triangle);
 
-Console.WriteLine(helper.CalculateArea(triangle));
-Console.WriteLine($"This triangle is right - {triangle.isRight()}");
+Console.WriteLine(helper.CalculateArea());
+Console.WriteLine($"This triangle is right - {triangle.IsRight()}");
