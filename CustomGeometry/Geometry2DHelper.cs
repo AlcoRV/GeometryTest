@@ -9,7 +9,7 @@
 
         public Geometry2DHelper(Figure2D figure)
         {
-            _figure = figure;
+            _figure = figure ?? throw new ArgumentNullException("figure is null!");
         }
 
         public double CalculateArea()
@@ -55,7 +55,7 @@
                 }
                 return false;
             }
-            return false;
+            return false; //Здесь можно вывести исключение
         }
     }
 }
