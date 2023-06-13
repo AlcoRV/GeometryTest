@@ -9,18 +9,18 @@
         {
             if (figure is Circle circle)
             {
-                return CalculateAreaCircle(circle);
+                return circle.CalculateAreaExt();
             }
             else if (figure is Triangle triangle)
             {
-                return CalculateAreaTriangle(triangle);
+                return triangle.CalculateAreaExt();
             }
             return 0; //По-хорошему, надо вернуть AreaException
         }
 
-        private static double CalculateAreaCircle(Circle circle) => Math.PI * circle.Radius * circle.Radius;
+        public static double CalculateAreaExt(this Circle circle) => Math.PI * circle.Radius * circle.Radius;
 
-        private static double CalculateAreaTriangle(Triangle triangle)
+        public static double CalculateAreaExt(this Triangle triangle)
         {
             var p = (triangle.A + triangle.B + triangle.C) / 2;
             return Math.Sqrt(p * (p - triangle.A) * (p - triangle.B) * (p - triangle.C));
