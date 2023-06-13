@@ -25,5 +25,22 @@
             var p = (triangle.A + triangle.B + triangle.C) / 2;
             return Math.Sqrt(p * (p - triangle.A) * (p - triangle.B) * (p - triangle.C));
         }
+
+        public static bool IsRightExt(this Triangle triangle)
+        {
+            if (triangle.A * triangle.A == triangle.B * triangle.B + triangle.C * triangle.C)
+            {
+                return true;
+            }
+            if (triangle.B * triangle.B == triangle.A * triangle.A + triangle.C * triangle.C)
+            {
+                return true;
+            }
+            if (triangle.C * triangle.C == triangle.B * triangle.B + triangle.A * triangle.A)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
