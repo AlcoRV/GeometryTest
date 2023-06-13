@@ -7,6 +7,8 @@
     {
         public static double CalculateAreaExt(this Figure2D figure)
         {
+            if(figure == null) { return 0; }
+
             if (figure is Circle circle)
             {
                 return circle.CalculateAreaExt();
@@ -18,16 +20,24 @@
             return 0; //По-хорошему, надо вернуть AreaException
         }
 
-        public static double CalculateAreaExt(this Circle circle) => Math.PI * circle.Radius * circle.Radius;
+        public static double CalculateAreaExt(this Circle circle) {
+            if(circle == null) return 0;
+
+            return Math.PI* circle.Radius* circle.Radius;
+        }
 
         public static double CalculateAreaExt(this Triangle triangle)
         {
+            if(triangle == null) return 0;
+
             var p = (triangle.A + triangle.B + triangle.C) / 2;
             return Math.Sqrt(p * (p - triangle.A) * (p - triangle.B) * (p - triangle.C));
         }
 
         public static bool IsRightExt(this Triangle triangle)
         {
+            if(triangle == null) return false;
+
             if (triangle.A * triangle.A == triangle.B * triangle.B + triangle.C * triangle.C)
             {
                 return true;
